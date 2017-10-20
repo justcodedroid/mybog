@@ -3,6 +3,7 @@
 #新增了个人简历
 # 新增了归档
 #本地提交
+# 代码优化
 from django.shortcuts import render
 from django.http.response import HttpResponse
 from models import *

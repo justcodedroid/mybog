@@ -1,6 +1,7 @@
 #coding=UTF-8
 #新增了一行注释
 #本地提交
+# 代码优化
 from django.shortcuts import render
 from django.http.response import HttpResponse
 from models import *

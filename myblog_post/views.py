@@ -1,5 +1,6 @@
 #coding=UTF-8
 #新增了一行注释
+#新增了个人简历
 from django.shortcuts import render
 from django.http.response import HttpResponse
 from models import *

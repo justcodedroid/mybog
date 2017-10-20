@@ -1,0 +1,68 @@
+{%  extends 'base.html' %}
+{% block main %}
+<article class="article article-type-page">
+<div class="article-inner">
+    <header class="article-header">
+    <p class="article-title">
+      {{ user.name }}
+    </p>
+    <br>
+    <h1 class="article-title">
+      {{ user.title }}
+    </h1>
+    <hr>
+        <p class="article-tag-list-item">手机:{{ user.phone }}</p>
+        <br>
+        <p class="article-tag-list-item">邮箱:{{ user.email }}</p>
+        <br>
+        <br>
+    </header>
+<div class="article-entry">
+     <article class="article-title">教育经历</article>
+        <ul>
+
+        {% for education in educations %}
+            <li>{{ education.start }} -- {{ education.end }} {{ education.address }} {{ education.desc }}</li>
+        {% endfor %}
+
+
+
+        </ul>
+</div>
+<div class="article-entry">
+     <article class="article-title">工作经验</article>
+    {% for exprience in expriences %}
+
+        <article class="article-header">
+          {{ exprience.start }} -- {{ exprience.end }} {{ exprience.address }} {{ exprience.title }}
+      </article>
+            <ul>
+
+           {% for item in exprience.exprienceitem_set.all %}
+           <li>{{ item.desc }}</li>
+           {% endfor %}
+
+        </ul>
+    {% endfor %}
+
+
+</div>
+
+<div class="article-entry">
+     <article class="article-title">技能</article>
+        <ul>
+
+          {% for skill in skills %}
+  <li>{{ skill.desc }}</li>
+
+          {% endfor %}
+
+
+        </ul>
+</div>
+<div class="article-footer">
+{{ user.desc }}
+</div>
+</div>
+</article>
+{% endblock main %}
